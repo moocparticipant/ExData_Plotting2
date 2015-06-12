@@ -1,8 +1,16 @@
 #Exploratory Data Analysis Mini Project 2 Plot 1
 library(plyr)
+
+source("ass1.r")
 #Have total emissions from PM2.5 decreased in the United States from 1999 to 2008
 #plot Emissions Vs year when the data set is passed
-plot1 <- function (NEI){
+
+plot1 <- function (){
+	newlist <- readData() # this list contains NEI, SCC
+	plot1_1(newlist$NEI)
+}
+
+plot1_1 <- function (NEI){
 	
 	#using ddply summarise Emissions by year
 	YearSums <- ddply(test$NEI, "year", summarise, sum = sum(Emissions))
