@@ -32,7 +32,10 @@ plot5_1 <- function (NEI, SCC){
 	          ylab="Total Emissions", main="Motor Vehicle Emissions in Baltimore 1999-2008")
 	
 	#write to file
-	ggsave(filename = "plot5.png", plot= g, width = 4, height = 4, bg="white" ) #8inches by 8inches
+	#ggsave(filename = "plot5.png", plot= g, width = 4, height = 4, bg="white" ) #8inches by 8inches
+	png (file = "plot5.png", width = 480, height = 480, bg="white")
+	print(g)
+	dev.off()
 	
 }
 

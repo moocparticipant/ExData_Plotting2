@@ -36,8 +36,10 @@ plot4_1 <- function (NEI, SCC){
 	          ylab="Total Emissions", main="Coal related Emissions in the US 1999-2008")
 	
 	#write to file
-	ggsave(filename = "plot4.png", plot= g, width = 4, height = 4, bg="white" ) #8inches by 8inches
-	
+	#ggsave(filename = "plot4.png", plot= g, width = 4, height = 4, bg="white" ) #8inches by 8inches
+	png(file = "plot4.png",width = 480, height = 480, bg="white")
+	print(g)
+	dev.off()
 }
 
  

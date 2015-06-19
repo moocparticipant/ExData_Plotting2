@@ -21,11 +21,15 @@ plot3_1 <- function (NEI){
 	BaltimoreSummary <- summarize(group_by(Baltimore, type, year), sum(Emissions))
 	colnames(BaltimoreSummary) <- c("Type", "Year", "TotalEmissions")
 	
+	png(file= "plot3.png", width = 480, height = 480, bg="white")
 	#create the plot g
 	g <- qplot(Year,TotalEmissions,data=BaltimoreSummary, facets = .~Type, geom = c("point","smooth"), method="lm",
 			ylab= "Total Emissions", main = "Emissions by Type in Baltimore(1999-2008)")
+	print (g)
 	#write to file
-	ggsave(filename = "plot3.png", plot= g, bg="white" ) #8inches by 8inches
+	#ggsave(filename = "plot3.png", plot= g, bg="white" ) #8inches by 8inches
+	
+	dev.off()
 }
 
  

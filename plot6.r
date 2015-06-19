@@ -54,7 +54,10 @@ plot6_1 <- function (NEI, SCC){
 	         ylab="Total Emissions", main="Vehicle Emissions Baltimore Vs LA", color = City)
 	
 	#write to file
-	ggsave(filename = "plot6.png", plot= g, width = 4, height = 4, bg="white" ) #8inches by 8inches
+	#ggsave(filename = "plot6.png", plot= g, width = 4, height = 4, bg="white" ) #8inches by 8inches
+	png (file = "plot6.png", width = 480, height = 480, bg="white" )
+	print(g)
+	dev.off()
 	
 }
 
