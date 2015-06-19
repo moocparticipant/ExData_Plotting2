@@ -2,7 +2,7 @@
 library(plyr)
 
 source("ass1.r")#contains readData function to read data from internet unzip and read to data frames
-#Have total emissions from PM2.5 decreased in the Baltimore City, Maryland (fips == "24510") from 1999 to 2008? 
+
 
 plot2 <- function (){
 	newlist <- readData() # this list contains NEI, SCC
@@ -20,7 +20,7 @@ plot2_1 <- function (NEI){
 
 	#write to file
 	#launch graphic device PNG file
-	png(file = "plot2.png", width = 480, height = 480, bg="white")
+	png(file = "plot2.png", width = 480, height = 480, bg="white" )
 	
 	#now plot the result
 	with(YearSums, plot(Year,TotalEmissions), xlab ="Year", ylab ="Total PM2.5 Emissions")
