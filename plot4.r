@@ -32,11 +32,11 @@ plot4_1 <- function (NEI, SCC){
 	#rename columns
 	colnames(YearSumsCoalEmissions) <- c("Year", "TotalEmissions")
 	
-	g <- qplot(Year,TotalEmissions,data=YearSumsCoalEmissions, xlab = "Year", geom = c("point","line"), method="lm",
+	g <- qplot(Year,TotalEmissions,data=YearSumsCoalEmissions, xlab = "Year", geom = c("point","smooth"), method="lm",
 	          ylab="Total Emissions", main="Coal related Emissions in the US 1999-2008")
 	
 	#write to file
-	ggsave(filename = "plot4.png", plot= g, width = 8, height = 8, bg="white" ) #8inches by 8inches
+	ggsave(filename = "plot4.png", plot= g, width = 4, height = 4, bg="white" ) #8inches by 8inches
 	
 }
 

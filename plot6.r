@@ -50,11 +50,11 @@ plot6_1 <- function (NEI, SCC){
 	#	7 2005     4601.41493        LA
 	#	8 2008     4101.32100        LA
 
-	g <- qplot(Year,TotalEmissions,data=Summary, color=City, xlab = "Year", geom = c("point","line"), method="lm",
-	         ylab="Total Emissions", main="Motor Vehicle Emissions Baltimore Vs LA 1999-2008", color = City)
+	g <- qplot(Year,TotalEmissions,data=Summary, color=City, xlab = "Year", geom = c("point","smooth"), method="lm",
+	         ylab="Total Emissions", main="Vehicle Emissions Baltimore Vs LA", color = City)
 	
 	#write to file
-	ggsave(filename = "plot6.png", plot= g, width = 8, height = 8, bg="white" ) #8inches by 8inches
+	ggsave(filename = "plot6.png", plot= g, width = 4, height = 4, bg="white" ) #8inches by 8inches
 	
 }
 

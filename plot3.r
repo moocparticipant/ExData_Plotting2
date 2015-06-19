@@ -22,10 +22,10 @@ plot3_1 <- function (NEI){
 	colnames(BaltimoreSummary) <- c("Type", "Year", "TotalEmissions")
 	
 	#create the plot g
-	g <- qplot(Year,TotalEmissions,data=BaltimoreSummary, facets = .~Type, geom = c("point","line"), method="lm",
+	g <- qplot(Year,TotalEmissions,data=BaltimoreSummary, facets = .~Type, geom = c("point","smooth"), method="lm",
 			ylab= "Total Emissions", main = "Emissions by Type in Baltimore(1999-2008)")
 	#write to file
-	ggsave(filename = "plot3.png", plot= g, width = 8, height = 8, bg="white" ) #8inches by 8inches
+	ggsave(filename = "plot3.png", plot= g, bg="white" ) #8inches by 8inches
 }
 
  

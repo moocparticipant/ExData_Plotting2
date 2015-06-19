@@ -28,11 +28,11 @@ plot5_1 <- function (NEI, SCC){
 	#rename columns
 	colnames(YearSumsEmissions) <- c("Year", "TotalEmissions")
 	
-	g <- qplot(Year,TotalEmissions,data=YearSumsEmissions, xlab = "Year", geom = c("point","line"), method="lm",
+	g <- qplot(Year,TotalEmissions,data=YearSumsEmissions, xlab = "Year", geom = c("point","smooth"), method="lm",
 	          ylab="Total Emissions", main="Motor Vehicle Emissions in Baltimore 1999-2008")
 	
 	#write to file
-	ggsave(filename = "plot5.png", plot= g, width = 8, height = 8, bg="white" ) #8inches by 8inches
+	ggsave(filename = "plot5.png", plot= g, width = 4, height = 4, bg="white" ) #8inches by 8inches
 	
 }
 

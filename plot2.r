@@ -24,6 +24,8 @@ plot2_1 <- function (NEI){
 	
 	#now plot the result
 	with(YearSums, plot(Year,TotalEmissions), xlab ="Year", ylab ="Total PM2.5 Emissions")
+	model <- lm (TotalEmissions ~ Year, YearSums)
+	abline(model, lwd =2)
 	title (main = "Total Emissions from PM2.5 in Baltimore 1999-2008")
 	
 	dev.off()
